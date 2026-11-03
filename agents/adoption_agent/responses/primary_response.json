@@ -1,0 +1,126 @@
+{
+  "agent": {
+    "name": "Emerging Technology Adoption Agent",
+    "specialty": "Contextual Technology Adoption Decisions",
+    "version": "0.1-student"
+  },
+  "analytical_question": "Should management adopt, conduct a bounded experiment, conduct a proof of concept, monitor, defer, or reject an LLM-based maintenance and operations knowledge assistant over the next 12–24 months?",
+  "general_et_finding": "Technology boundary: current Large Language Models / Generative AI systems used as knowledge-assistance and retrieval-grounded tools, not hypothetical AGI. Evidence cutoff: November 3, 2026. Maturity is sufficient for useful enterprise knowledge-assistance experiments but not sufficient to infer dependable performance in safety-sensitive operational workflows. Stanford's 2026 AI Index reports widespread organizational use of AI and regular generative-AI use in at least one business function among a large majority of surveyed organizations, while also distinguishing broad use from deeper organizational scaling. McKinsey's 2025 survey similarly found that nearly two-thirds of respondents had not yet begun scaling AI across the enterprise. Current vendor platforms support retrieval-augmented generation over proprietary information, permission-aware retrieval, source references, citations, and fallback behavior, showing that the technical building blocks for grounded enterprise assistants are available. However, NIST continues to identify confabulation and other reliability risks as material limitations of generative AI. Diffusion is therefore broad at the general technology level, while reliable high-consequence use remains application-dependent. General technology evidence supports neither blanket adoption nor blanket rejection.",
+  "application_finding": "For a maintenance and operations knowledge assistant, feasibility is sufficiently established to move beyond a purely conceptual proof of concept, but local suitability is not established strongly enough for production implementation. Current alternatives include authoritative document repositories, conventional enterprise search, curated FAQs, improved document management, and escalation to qualified technicians or engineers. Retrieval-augmented generation offers a plausible relative advantage by allowing conversational retrieval and synthesis across proprietary technical content, and current Microsoft documentation shows that enterprise RAG architectures can return grounding data, citations, and provenance. Comparable energy-sector examples also exist: Uniper reports use of a generative-AI knowledge tool at its Scholven power plant over a large operational-document corpus; Aramco reports purpose-built language models supporting engineers with technical standards, procedures, safety requirements, and design information; JERA has developed generative-AI-enabled operation-and-maintenance solutions; and TotalEnergies reports development of an industrial-maintenance AI agent. These examples establish technical plausibility and comparable experimentation, but they do not prove safe or effective performance for this organization's documents, procedures, users, or consequences. The most important application uncertainty is not whether an LLM can produce answers, but whether a grounded system can consistently retrieve the correct authoritative source, interpret it accurately, distinguish current from superseded documents, abstain when evidence is insufficient, and do so with an acceptable human-verification burden.",
+  "organization_specific_finding": "The organization is a moderate / fast-follower operating safety-sensitive petrochemical or energy facilities. That posture supports learning from demonstrated external precedent but does not justify production deployment without local validation. The supplied organization has potentially useful prerequisites, including substantial internal documentation and technical expertise, but important readiness facts remain unknown: document currency and structure, source authority, metadata quality, access-control integrity, cybersecurity constraints, integration feasibility, qualified reviewer availability, and actual user verification behavior. Because an incorrect answer could influence consequential human action, reversibility is only partial: a read-only assistant can be technically switched off, but a human decision made from a wrong answer may not be reversible. The appropriate current action therefore depends on strict containment and the ability to test without exposing live safety-critical decisions. If an offline or shadow-mode environment, authoritative controlled corpus, accountable technical owner, and qualified review capacity can be confirmed, the organization has enough evidence to justify a bounded experiment. If those prerequisites cannot be established, the recommendation should narrow toward proof of concept or monitoring rather than assume that experimentation is safe.",
+  "evidence": [
+    {
+      "claim": "Organizational AI use is widespread, but enterprise scaling remains materially less mature than general experimentation and use.",
+      "source_or_reference": "McKinsey & Company, The state of AI in 2025: Agents, innovation, and transformation, November 5, 2025, https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2025",
+      "date_or_recency": "Published November 5, 2025; accessed November 3, 2026",
+      "evidence_type": "Original global organizational survey",
+      "notes": "McKinsey reports 88% regular organizational AI use in at least one business function, while nearly two-thirds of respondents had not yet begun scaling AI across the enterprise. This supports maturity and diffusion context but does not establish suitability for this application."
+    },
+    {
+      "claim": "Regular organizational generative-AI use was reported by 79% of respondents in 2025, while survey-based adoption evidence is self-reported and directional.",
+      "source_or_reference": "Stanford Institute for Human-Centered AI, AI Index Report 2026, Economy chapter, https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+      "date_or_recency": "2026 report using 2025 survey data; accessed November 3, 2026",
+      "evidence_type": "Authoritative institutional synthesis",
+      "notes": "Supports broad generative-AI diffusion specifically rather than relying only on broad AI statistics. It does not prove application-level readiness or scaled industrial use."
+    },
+    {
+      "claim": "Current enterprise RAG platforms can retrieve proprietary content and provide grounding data, source references, citation tracking, and permission-aware knowledge access.",
+      "source_or_reference": "Microsoft Learn, Retrieval-augmented generation in Azure AI Search, https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview",
+      "date_or_recency": "Current documentation accessed November 3, 2026",
+      "evidence_type": "Official vendor technical documentation",
+      "notes": "Supports current technical capability for a grounded knowledge assistant. It establishes available product functionality, not accuracy, safety, or suitability for petrochemical operations."
+    },
+    {
+      "claim": "Microsoft's RAG guidance recommends explicit grounding constraints, fallback behavior when source context is insufficient, citations, and handling of conflicting information.",
+      "source_or_reference": "Microsoft Azure Architecture Center, Develop a RAG Solution on Azure: Prompt Engineering, https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-prompt-engineering",
+      "date_or_recency": "Current documentation accessed November 3, 2026",
+      "evidence_type": "Official technical implementation guidance",
+      "notes": "Supports feasibility of proposed experiment controls such as source grounding, citations, conflict handling, and abstention. It does not validate those controls in this organization's environment."
+    },
+    {
+      "claim": "Generative-AI systems can confidently produce erroneous or false content, creating material risk where users act on outputs.",
+      "source_or_reference": "NIST AI 600-1, Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile, July 26, 2024, https://doi.org/10.6028/NIST.AI.600-1",
+      "date_or_recency": "Published July 26, 2024; accessed November 3, 2026",
+      "evidence_type": "Authoritative U.S. government risk-management guidance",
+      "notes": "Strongly relevant to consequences of failure and the decision not to move directly to production implementation."
+    },
+    {
+      "claim": "Uniper reports a generative-AI operational knowledge application at its Scholven power plant using a corpus of 162,000 operational and training files.",
+      "source_or_reference": "Microsoft Customer Story, COODE for increased efficiency: Uniper turns employee ideas into solutions with Azure, April 28, 2025, https://www.microsoft.com/en/customers/story/23394-uniper-it-gmbh-azure-app-service",
+      "date_or_recency": "Published April 28, 2025; accessed November 3, 2026",
+      "evidence_type": "Vendor-hosted customer deployment case",
+      "notes": "Supports comparable technical feasibility and external precedent. It is not independent evidence of typical outcomes, industry penetration, or local safety."
+    },
+    {
+      "claim": "Uniper's own 2025 corporate disclosure states that it is using AI in power plants to optimize operations and make critical know-how accessible for decision-making.",
+      "source_or_reference": "Uniper SE, Quarterly Statement Q3 2025, November 6, 2025, https://www.uniper.energy/system/files/2025-11/2025_11_06_Quarterly-Statement_Q3_2025.pdf",
+      "date_or_recency": "Published November 6, 2025; accessed November 3, 2026",
+      "evidence_type": "Original company disclosure",
+      "notes": "Corroborates that operational AI use is not limited to a vendor case study, but does not establish independent performance or safe transfer to petrochemical workflows."
+    },
+    {
+      "claim": "Aramco reports purpose-built language models supporting scientists and engineers in accessing technical standards, verifying safety requirements, comparing design alternatives, and navigating procedures while retaining human expertise.",
+      "source_or_reference": "Aramco, How can industrial AI help us optimize our energy operations?, https://www.aramco.com/en/about-us/our-brand/powered-by-how/ai-energy-transformation",
+      "date_or_recency": "Current company webpage accessed November 3, 2026",
+      "evidence_type": "Original company disclosure",
+      "notes": "Supports comparable application plausibility in energy operations. It does not provide independently verified reliability or adoption-depth evidence."
+    },
+    {
+      "claim": "JERA has developed generative-AI-enabled operation-and-maintenance solutions and introduced prototype work into its Digital Power Plant program.",
+      "source_or_reference": "JERA, JERA and Microsoft Partner to Create More Efficient and Sustainable Power Plant Operations, September 11, 2023, https://www.jera.co.jp/en/news/information/20230911_1665",
+      "date_or_recency": "Published September 11, 2023; accessed November 3, 2026",
+      "evidence_type": "Original company disclosure",
+      "notes": "Supports comparable experimentation in an asset-intensive energy environment. A planned or prototype deployment is not evidence of safe production maturity."
+    },
+    {
+      "claim": "TotalEnergies reports development of MARGE, an AI agent for industrial maintenance, after broad internal generative-AI deployment.",
+      "source_or_reference": "Microsoft Customer Story, From Microsoft 365 Copilot to Copilot Studio: TotalEnergies at the forefront of AI transformation, October 22, 2025, https://www.microsoft.com/en/customers/story/25505-totalenergies-agents",
+      "date_or_recency": "Published October 22, 2025; accessed November 3, 2026",
+      "evidence_type": "Vendor-hosted customer deployment case",
+      "notes": "Provides another comparable industrial-maintenance precedent. Reported performance improvements are vendor-hosted and should not be generalized to this organization."
+    },
+    {
+      "claim": "The EU AI Act is being progressively enforced, including GPAI and transparency obligations, but applicability to the contemplated deployment depends on jurisdiction, system role, and classification.",
+      "source_or_reference": "European Commission, AI Act enforcement framework and official AI Act guidance, https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+      "date_or_recency": "Current official guidance accessed November 3, 2026",
+      "evidence_type": "Authoritative regulatory source",
+      "notes": "Shows that current regulation can materially affect deployment in relevant jurisdictions. The case does not specify geography, so no EU-specific obligation is assumed to apply to this organization."
+    }
+  ],
+  "contrary_evidence_or_limitations": [
+    "No independent evidence reviewed establishes that an LLM-based operations knowledge assistant is sufficiently accurate or safe for this specific organization's procedures, equipment, terminology, users, or consequence environment.",
+    "Comparable company cases demonstrate feasibility and interest but are not substitutes for organization-specific validation; several are company or vendor disclosures that may emphasize successful outcomes.",
+    "Broad AI or generative-AI diffusion does not establish operational readiness, safety, economic value, or application fit.",
+    "Current RAG platforms can provide grounding and citations, but retrieved sources can still be incomplete, irrelevant, conflicting, outdated, or misinterpreted by the model.",
+    "Human review cannot be assumed to eliminate risk; review quality depends on user expertise, workload, trust calibration, time pressure, source visibility, and whether users independently verify consequential answers.",
+    "The organization has not supplied evidence about document quality, version control, metadata, access permissions, cybersecurity architecture, reviewer capacity, baseline search performance, or current error rates.",
+    "Jurisdiction is unspecified, so no particular regulatory classification or compliance obligation can be treated as dispositive. EU AI Act requirements may matter if the system is deployed within scope, but that must be established separately.",
+    "A simpler alternative such as improved authoritative search, better document management, curated FAQs, or expert escalation could produce part of the desired value with less generative uncertainty and must be included in comparative evaluation.",
+    "Fear of missing out is not supported as a decision driver: comparable deployments exist, but no evidence reviewed establishes that waiting for a controlled evaluation would create material competitive harm.",
+    "Excessive conservatism would also be a bias because external precedent and current technical capability are sufficient to justify learning if safe containment prerequisites are met."
+  ],
+  "confidence_and_uncertainty": "General technology assessment: HIGH confidence that LLM/generative-AI technology is mature enough for enterprise experimentation and broadly diffused, but not uniformly scaled or reliably suited to consequential tasks. Application assessment: MODERATE confidence that a grounded operations knowledge assistant is technically feasible because current RAG capabilities and comparable energy-sector deployments demonstrate the core functionality. Organization-specific recommendation: MODERATE confidence in BOUNDED EXPERIMENT, conditional on confirming safe containment, authoritative source controls, cybersecurity/access restrictions, and qualified review capacity. Most important uncertainty: whether this organization's actual document corpus and user workflow can support sufficiently accurate retrieval, correct procedural interpretation, reliable abstention, and an acceptable human-verification burden. If these prerequisites cannot be confirmed before exposure to consequential workflows, confidence in a bounded experiment falls and PROOF OF CONCEPT or MONITOR becomes more defensible.",
+  "value_opportunity_implication": "The strongest prospective value is learning whether conversational, source-grounded access can reduce the effort required to locate and synthesize authoritative operational knowledge without creating unacceptable verification burden. Comparable deployments and current RAG capabilities make that learning question credible. A bounded experiment could also reveal document-governance problems, source duplication, outdated procedures, metadata gaps, permission issues, user-training needs, and workflow friction that are valuable regardless of whether the LLM is ultimately implemented. No reviewed evidence supports a specific ROI, downtime reduction, safety improvement, or productivity estimate for this organization. The cost of waiting 12–24 months without any structured learning is primarily a potential capability-learning delay rather than a demonstrated competitive loss.",
+  "risk_governance_implication": "The main risk of moving too early is allowing fluent but wrong or poorly grounded answers to influence safety-sensitive human decisions before domain performance, source authority, cybersecurity, and verification behavior are understood. Read-only deployment reduces technical actuation risk but does not eliminate decision influence. The experiment should therefore exclude equipment control, automatic work authorization, autonomous safety decisions, unsupervised troubleshooting instructions, and any workflow in which an output can directly trigger consequential action without qualified independent review. Source provenance, current-document identification, access controls, logging, user feedback, and explicit abstention should be testable prerequisites rather than assumed controls. The main risk of waiting too long is loss of learning and internal capability, not a verified immediate competitive disadvantage. Full governance, legal compliance, cybersecurity architecture, organizational readiness, and safety validation require separate specialist or domain review.",
+  "recommendation_management_implication": "Chosen category: BOUNDED EXPERIMENT. Closest competing category: PROOF OF CONCEPT. Justification: current technology and enterprise RAG capabilities, together with comparable energy-sector deployments, provide enough evidence that the basic concept is technically feasible, so testing only whether an LLM can access and answer questions from technical documents would be too narrow. However, evidence is not strong enough for ADOPT / IMPLEMENT because organization-specific reliability, source quality, workflow benefit, verification burden, cybersecurity fit, and safety implications remain unvalidated. Strongest decision driver: the combination of credible technical feasibility with high consequences of erroneous operational information makes controlled organizational learning preferable to either direct production deployment or passive monitoring. Most important uncertainty: whether authoritative retrieval, document-version control, correct interpretation, abstention, and qualified-human review will perform adequately with this organization's actual corpus and workflows. Action scope and prerequisites: before the experiment, confirm an isolated or shadow-mode environment, a bounded and authoritative document corpus, documented permissions and version control, cybersecurity approval for the test environment, an accountable engineering or operations owner, and qualified reviewers. Limit the test to read-only assistance with no equipment actuation, work authorization, safety-critical command execution, or unsupervised operational instruction. Compare the system against existing search/document-management and expert-escalation baselines. Proposed success criteria should include source-retrieval correctness, citation/source match, correct identification of authoritative/current documents, appropriate abstention when evidence is insufficient, task-completion usefulness, reviewer effort, and absence of severe unsafe answers in representative tests. Proposed failure/stop conditions should include recurrent incorrect procedure interpretation, fabricated or mismatched sources, inability to distinguish superseded documents, access-control failures, materially excessive verification burden, or any severe unsafe recommendation during testing. Next decision gate: after representative offline/shadow-mode evaluation, management should decide whether evidence supports a limited production implementation, a narrower proof of concept, further experimentation, or discontinuation. Reversal/change condition: move toward ADOPT / IMPLEMENT only if representative testing demonstrates dependable source-grounded performance and manageable verification burden under validated controls; narrow toward PROOF OF CONCEPT, MONITOR, DEFER, or REJECT FOR PRESENT if containment prerequisites cannot be established or severe reliability, security, or workflow failures emerge.",
+  "change_monitoring_triggers": [
+    "Escalate toward ADOPT / IMPLEMENT if representative internal testing demonstrates consistently correct retrieval of authoritative current documents, accurate source citations, appropriate abstention, acceptable reviewer workload, and no severe safety-relevant failures under validated controls.",
+    "Narrow toward PROOF OF CONCEPT if the organization cannot yet establish document authority, versioning, access controls, representative test data, or a safe shadow-mode environment.",
+    "Move toward MONITOR or DEFER if cybersecurity, regulatory, document-governance, or integration constraints prevent meaningful safe testing during the 12–24 month horizon.",
+    "Move toward REJECT FOR PRESENT for this application if repeated representative testing shows severe procedural misinterpretation, persistent source fabrication, unacceptable access-control failures, or a verification burden that eliminates credible relative advantage.",
+    "Reassess relative advantage if improved conventional search, document management, or curated knowledge systems achieve comparable user outcomes with materially lower complexity or risk.",
+    "Reassess urgency if independent evidence shows comparable petrochemical organizations achieving sustained multi-site production use with transparent reliability and human-verification results, rather than only pilots or public case studies.",
+    "Reassess the regulatory analysis whenever deployment jurisdiction and system classification are known or when authoritative local requirements change.",
+    "Reevaluate at the end of the bounded experiment or within 6–12 months if no experiment has begun, because vendor capabilities, regulation, and enterprise evidence are changing rapidly."
+  ],
+  "abstention_or_more_information_needed": [
+    "Cannot recommend ADOPT / IMPLEMENT because no organization-specific evidence establishes reliable performance, acceptable verification burden, security fit, or operational benefit in this petrochemical environment.",
+    "Cannot assume that a bounded experiment is safe until the organization confirms an isolated or shadow-mode test environment, authoritative document corpus, access controls, cybersecurity review, accountable owner, and qualified-human review capacity.",
+    "Cannot claim that human review will reliably catch all consequential errors without representative human-factors testing.",
+    "Cannot quantify ROI, downtime reduction, maintenance-quality improvement, safety improvement, or competitive disadvantage from waiting based on the available evidence.",
+    "Cannot determine whether EU AI Act or other jurisdiction-specific requirements apply to this deployment until geography, system role, intended use, and legal classification are specified.",
+    "Cannot infer that comparable deployments at Uniper, Aramco, JERA, or TotalEnergies establish equivalent readiness or outcomes for this organization.",
+    "Additional information needed includes document-authority and versioning practices, baseline search performance, representative user questions, expected answer types, severe-error definitions, cybersecurity constraints, access-control architecture, reviewer workload capacity, current internal AI experience, and the organization's acceptable decision thresholds.",
+    "If those prerequisites are unavailable or cannot be safely tested, the recommendation should be narrowed before any consequential workflow exposure."
+  ]
+}

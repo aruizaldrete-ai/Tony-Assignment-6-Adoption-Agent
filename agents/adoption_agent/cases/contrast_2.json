@@ -1,0 +1,14 @@
+{
+  "emerging_technology": "Large Language Models / Generative AI",
+  "intended_application": "An LLM-based internal corporate knowledge assistant that retrieves and summarizes approved office onboarding materials, meeting-room booking instructions, internal service-directory entries, and routine administrative FAQs. It does not interpret operating procedures or provide safety, legal, financial, or personnel decision advice.",
+  "organization": "A large petrochemical or energy company operating safety-sensitive industrial facilities.",
+  "industry_sector": "Petrochemical / energy.",
+  "business_need": "Reduce time spent locating routine internal corporate information while improving consistency of access to approved administrative guidance.",
+  "users_stakeholders": "Corporate office employees, administrative staff, internal communications teams, document owners, IT/data teams, and management.",
+  "adoption_posture": "Moderate / fast-follower.",
+  "capabilities_constraints": "Approved internal administrative documentation and qualified staff are available for review. Document freshness, permissions, proprietary data, cybersecurity, integration effort, and user trust still matter. No production-system write access is assumed.",
+  "risk_consequence_context": "Errors are limited to reversible administrative inconvenience or incorrect drafts. Qualified staff can easily review and correct outputs against approved sources before acting. The assistant cannot change records or control equipment; safety-sensitive operational workflows are excluded.",
+  "management_question": "Should management adopt, conduct a bounded experiment, conduct a proof of concept, monitor, defer, or reject an LLM-based non-safety-critical internal corporate knowledge assistant over the next 12\u201324 months?",
+  "time_horizon": "Next 12\u201324 months.",
+  "additional_context": "Synthetic lower-consequence contrast. The same organization, technology, industry, moderate/fast-follower posture, and time horizon are retained. Application, stakeholders, business need, relevant constraints, and consequences change to reflect routine corporate knowledge assistance. This is not a one-variable causal test."
+}
