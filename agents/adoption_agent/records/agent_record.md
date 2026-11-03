@@ -4,7 +4,7 @@
 - Specialty: Contextual Technology Adoption Decisions.
 - Lab 6 GitHub repository: https://github.com/aruizaldrete-ai/Tony-Assignment-6-Adoption-Agent
 - Branch: lab6-adoption-agent.
-- Lab 6 candidate commit: Pending; earlier assignment commits are not Lab 6 provenance.
+- Lab 6 candidate commit: e93b707 (Complete Lab 6 Adoption Agent v0.2 with preserved tests and record). This subsequent provenance-only commit records the candidate.
 
 ## Student
 Tony Ruiz
